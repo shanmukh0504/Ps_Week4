@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+    </body>
+    <script>
+        const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+        document.getElementById("demo").innerHTML = ages.map(myFunction);
+        function myFunction(age) {
+            return age * 10;
+        }
+        document.getElementById("demo1").innerHTML = ages.reduce(getSum, 0);
+        function getSum(total, age) {
+            return total + Math.round(age);
+        }
+        document.getElementById("demo2").innerHTML = ages.filter(checkAdult);
+        function checkAdult(age) {
+            return age >= 18;
+        }
+    </script>
+</html>
